@@ -13,10 +13,11 @@ public class followMouse : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Vector3 mousePosition = GetMouseWorldPosition();
-        Vector3 aimDirection = (mousePosition - transform.position).normalized;
+        //Vector3 aimDirection = (mousePosition - transform.position).normalized;
+        Vector3 aimDirection = mousePosition.normalized;
         float angleCalculation = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
         aimTransform.eulerAngles = new Vector3(0, 0, angleCalculation);
     }
