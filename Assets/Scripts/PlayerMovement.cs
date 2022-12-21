@@ -8,19 +8,20 @@ using UnityEngine.Tilemaps;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D _rigidbody2D;
-    //private Animator _anim;
+    private Animator _anim;
     public float movementSpeed;
     private Vector2 _movementInput;
     private void Awake()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
-        //_anim = GetComponent<Animator>();
+        _anim = GetComponent<Animator>();
     }
 
     private void FixedUpdate()
     {
         Move();
         //Animate();
+        
     }
 
     private void Move()
